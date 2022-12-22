@@ -29,7 +29,7 @@ namespace WeatherApp.Prism.Views
         async void myListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var locationitem = e.SelectedItem as LocationItem;
-            await Navigation.PushAsync(new CurrentWeatherPage(locationitem.Name));
+            await Navigation.PushAsync(new CurrentWeatherPage(locationitem.Name, locationitem.Icon));
         }
     }
 }

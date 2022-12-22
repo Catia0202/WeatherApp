@@ -38,6 +38,12 @@ namespace WeatherApp.Prism.ViewModels
                     PageName = $"{nameof(LocationsPage)}",
                     Title = "Locations"
                 },
+                   new Menu
+                {
+                    Icon = "abouticon",
+                    PageName = $"{nameof(AboutPage)}",
+                    Title = "About"
+                },
                 new Menu
                 {
                     Icon = "dooricon",

@@ -14,26 +14,28 @@ namespace WeatherApp.Prism.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CurrentWeatherPage : ContentPage
     {
-        public CurrentWeatherPage(string name)
+        public CurrentWeatherPage(string name, string icon)
         {
             InitializeComponent();
-            GetWeatherInfo(name);
+            GetWeatherInfo(name,icon);
             
         }
         public CurrentWeatherPage()
         {
             InitializeComponent();
-            GetWeatherInfo("false");
+            GetWeatherInfo("false","false");
 
         }
 
         private string Location { get; set; } = "Portugal";
-       
-        private async void GetWeatherInfo(string name)
+
+        private string Image { get; set; } = "bg.png";
+        private async void GetWeatherInfo(string name,string icon)
         {
             if (name != "false")
             {
                 Location = name;
+                Image = icon + ".jpg";
             }
             var url = $"http://api.openweathermap.org/data/2.5/weather?q="+Location+ "&appid=3f9a0e2f625e281090407a244fc2c4a1&units=metric";
 
@@ -46,6 +48,7 @@ namespace WeatherApp.Prism.Views
                     var weatherInfo = JsonConvert.DeserializeObject<WeatherInfo>(result.Response);
                     descriptionTxt.Text = weatherInfo.weather[0].description.ToUpper();
                     iconImg.Source = $"w{weatherInfo.weather[0].icon}";
+                    bgImg.Source = Image;
                     cityTxt.Text = weatherInfo.name.ToUpper();
                     temperatureTxt.Text = weatherInfo.main.temp.ToString("0");
                     humidityTxt.Text = $"{weatherInfo.main.humidity}%";

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="WeatherApp.Prism.Views.AboutPage"
+              Title="{Binding Title}">
+
+    <CarouselPage.ItemTemplate>
+        <DataTemplate>
+            <ContentPage>
+                <StackLayout>
+                    <Frame CornerRadius="5"
+                           HeightRequest="350"
+                           HorizontalOptions="Center"
+                           VerticalOptions="CenterAndExpand">
+                        <StackLayout>
+                            <Label Text="{Binding Name}"
+                                   FontSize="Large"
+                                   HorizontalOptions="Center"/>
+                            <Image Source="{Binding Image}"
+                                   HeightRequest="150"
+                                   WidthRequest="200"/>
+                            <Label Text="{Binding Status}"
+                                   HorizontalOptions="Center"/>
+
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ContentPage>
+        </DataTemplate>
+    </CarouselPage.ItemTemplate>
+</CarouselPage>

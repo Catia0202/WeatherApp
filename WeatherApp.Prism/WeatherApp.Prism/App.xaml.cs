@@ -32,6 +32,7 @@ namespace WeatherApp.Prism
             containerRegistry.RegisterForNavigation<CurrentWeatherPage, CurrentWeatherPageViewModel>();
             containerRegistry.RegisterForNavigation<WeatherAppMasterDetailPage, WeatherAppMasterDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<LocationsPage, LocationsPageViewModel>();
+            containerRegistry.RegisterForNavigation<AboutPage, AboutPageViewModel>();
         }
     }
 }

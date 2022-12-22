@@ -62,7 +62,7 @@ namespace WeatherApp.Prism.ViewModels
             if (string.IsNullOrEmpty(Email))
             {
                 IsRunning = false;
-                await App.Current.MainPage.DisplayAlert("Erro", "Verifica o Email", "Ok");
+                await App.Current.MainPage.DisplayAlert("Error", "Verify your Email", "Ok");
                 return;
 
             }
@@ -70,7 +70,7 @@ namespace WeatherApp.Prism.ViewModels
             if (string.IsNullOrEmpty(Password))
             {
                 IsRunning = false;
-                await App.Current.MainPage.DisplayAlert("Erro", "Verifica a Palavra Passe", "Ok");
+                await App.Current.MainPage.DisplayAlert("Error", "Verify your Password", "Ok");
                 return;
 
             }
@@ -82,7 +82,7 @@ namespace WeatherApp.Prism.ViewModels
                 if (email.Email.Equals(Email) && email.Password.Equals(Password))
                 {
                     IsRunning = false;
-                    await App.Current.MainPage.DisplayAlert("Bem Vindo:", email.FirstName + " " + email.LastName, "Ok");
+                    await App.Current.MainPage.DisplayAlert("Welcome:", email.FirstName + " " + email.LastName, "Ok");
                     
                     await NavigationService.NavigateAsync($"/{nameof(WeatherAppMasterDetailPage)}/NavigationPage/{nameof(CurrentWeatherPage)}");
 

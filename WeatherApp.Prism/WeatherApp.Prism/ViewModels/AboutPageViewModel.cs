@@ -8,11 +8,11 @@ using Xamarin.Forms;
 
 namespace WeatherApp.Prism.ViewModels
 {
-	public class LocationsPageViewModel : ViewModelBase 
-    { 
-        public LocationsPageViewModel(INavigationService navigationService) : base(navigationService)
+    public class AboutPageViewModel : ViewModelBase
+    {
+        public AboutPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            Title = "Locations";
+            Title = "About";
         }
-	}
+    }
 }

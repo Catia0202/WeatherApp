@@ -5,20 +5,63 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="WeatherApp.Prism.Views.LoginPage"
              Title="{Binding Title}">
-    <StackLayout Padding="10">
-        <Label Text="Email"/>
-        <Entry Keyboard="Email" Placeholder="Enter your Email"
-               Text="{Binding Email}"/>
-        <Label Text="Password"/>
-        <Entry IsPassword="True"
-               Placeholder="Enter your password"
-               Text="{Binding Password}"/>
-        <Button Command="{Binding LoginCommand}" 
-                IsEnabled="{Binding IsEnabled}"
-                Text="Login"/>
-        <ActivityIndicator
-            IsRunning="{Binding IsRunning}"
-            VerticalOptions="EndAndExpand"/>
-        
+    <StackLayout BackgroundColor="#e6e6e6">
+        <Grid>
+            <StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                <Frame HeightRequest="150" BackgroundColor="White" Padding="0" Margin="0">
+                    <Image Source="https://t4.ftcdn.net/jpg/02/66/38/15/360_F_266381525_alVrbw15u5EjhIpoqqa1eI5ghSf7hpz7.jpg" Aspect="AspectFill" Margin="0"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
+                <Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
+
+                    <StackLayout>
+
+
+                        <StackLayout Margin="10">
+                            <Label Text="SIGN IN" TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                        </StackLayout>
+
+                        <StackLayout Padding="0" Margin="15,10">
+
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                        <Image Source="https://img.freepik.com/free-icon/user_318-353821.jpg?w=2000" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+
+                                    <Entry Placeholder="Enter your Email"
+               Text="{Binding Email}" TextColor="#76b5c5" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="White" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                        <Image Source="https://icons.iconarchive.com/icons/webiconset/application/128/Login-icon.png" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+
+                                    <Entry  Placeholder="Enter your password"
+               Text="{Binding Password}" IsPassword="True" TextColor="#76b5c5" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <StackLayout  Orientation="Horizontal">
+                              
+
+                            </StackLayout>
+
+                            <Button Text="SIGN IN"  Command="{Binding LoginCommand}" 
+                IsEnabled="{Binding IsEnabled}" BackgroundColor="#76b5c5" TextColor="White" Margin="50" CornerRadius="30" />
+                         
+                        </StackLayout>
+
+
+                    </StackLayout>
+
+                </Frame>
+            </StackLayout>
+        </Grid>
     </StackLayout>
+    
 </ContentPage>
